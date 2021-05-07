@@ -8,8 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "server": "nodemon server/server.js"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
