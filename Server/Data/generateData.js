@@ -15,23 +15,24 @@ const seedDataBase = () => {
     console.log('Seeding DB')
     for(let i = 0; i < 100; i++) {
       let itemColors =  getColors();
-      let newPriceRecord =  new priceModel(
+      let newPriceRecord =
         {
         itemId: i,
         price: faker.commerce.price(),
         colors: itemColors
         }
-      );
       recordsContainer.push(newPriceRecord);
     }
-  console.log('recordsContainer', recordsContainer)
-  priceModel.insertMany(recordsContainer)
+  priceModel.deleteMany({})
     .then(() => {
-     console.log("Save Data to DB Success")
-     return process.exit(0);
-    })
-    .catch((err) => {
-      console.log('Save Data Error:', err)
+      priceModel.insertMany(recordsContainer)
+        .then(() => {
+         console.log("Save Data to DB Success")
+         return process.exit(0);
+        })
+        .catch((err) => {
+          console.log('Save Data Error:', err)
+        })
     })
 }
 
