@@ -28,7 +28,7 @@ const seedDataBase = () => {
       priceModel.insertMany(recordsContainer)
         .then(() => {
          console.log("Save Data to DB Success")
-         return process.exit(0);
+        //  return process.exit(0);
         })
         .catch((err) => {
           console.log('Save Data Error:', err)
