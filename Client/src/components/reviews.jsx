@@ -1,10 +1,10 @@
 const React = require('react');
-
+import DivTagReviews from './styledComponents.jsx'
 class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     }
   }
 
@@ -13,7 +13,8 @@ class Reviews extends React.Component {
     return (
       <div>
         {/* temp place holders */}
-        <p>⭐️⭐️⭐️⭐️⭐️  433</p>
+        ⭐️⭐️⭐️⭐️⭐️
+        <span>233</span>
       </div>
     )
   }
