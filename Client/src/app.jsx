@@ -4,22 +4,37 @@ import Reviews from './components/reviews.jsx';
 import Quantity from './components/quantity.jsx';
 import Colors from './components/colors.jsx';
 import $ from 'jquery';
-import {DivTagBody, DivTagPrice, DivTagReviews} from './components/styledComponents.jsx'
+import {DivTagBody, DivTagPrice, DivTagReviews, SpanTag, ButtonTag} from './components/styledComponents.jsx'
 
 
 class App extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      price: ''
-    },
+      price: '',
+      item: '1'
+    }
+
+     this.item = window.location.pathname.slice(window.location.pathname.length -1);
+     console.log(this.item)
+    if(this.item === '/') {
+      this.item = '1';
+    }
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:2000/price/22',
-      success: (data) => {
-        this.setState({price: data.price});
-      }
-    })
+      url: `http://localhost:2000/price/${this.item}`,
+      success: (item) => {
+        // $.ajax({
+        //   type: 'GET',
+        //   url: `http://localhost:2000/price/${data}`,
+        //   success: (item) => {
+            this.setState({
+              price: item.price
+              //item: item
+            });
+          }
+        })
+
   }
 
 
@@ -35,8 +50,9 @@ class App extends React.Component {
           {/* <Reviews /> */}
           {/* <p>Payment Options Here</p> */}
           {/* <PayOptions /> */}
-          <p>Quanttity Tab Here</p>
-          <Quantity />
+          <SpanTag>
+            <Quantity />
+          </SpanTag>
           {/* <Quanttity /> */}
           <p>Color Picker Here</p>
           <Colors />
