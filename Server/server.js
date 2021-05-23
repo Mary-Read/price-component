@@ -3,22 +3,41 @@ const app = express();
 const port = 2000;
 const db = require('./Data/db.js')
 const bodyParser = require('body-parser');
+const path = require('path');
+let router = express.Router();
 
-app.use(express.static(__dirname + '/../Client/dist'));
+// const items = require('./Routes/item.js');
+const directory = path.join(__dirname, '/../Client/dist');
 
-app.get('/price/all', (req, res) => {
+app.use('/price/', router);
+
+app.use(express.static(directory));
+
+app.get(['/', '/p/*'], (req, res) => {
+  res.sendFile(path.join(directory, 'index.html'));
+});
+
+router.use(express.urlencoded({extended: true}));
+router.use(express.json());
+
+router.get('/all', (req, res) => {
   db.find({})
     .then((allRecords) => {
       res.send(allRecords)
     })
 })
 
-app.get('/price/:itemId', (req, res) => {
+
+
+
+router.get('/:itemId', (req, res) => {
   //send requested price based on user id
-  console.log('itemId:', req.params.itemId)
     db.find({itemId: req.params.itemId})
       .then((price) => {
-        let searchedPrice = {price: price[0].price}
+        let searchedPrice = {
+          price: price[0].price
+
+        }
         res.send(searchedPrice)
       })
 });
