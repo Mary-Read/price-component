@@ -16,7 +16,6 @@ class App extends React.Component {
     }
 
      this.item = window.location.pathname.slice(window.location.pathname.length -1);
-     console.log(this.item)
     if(this.item === '/') {
       this.item = '1';
     }

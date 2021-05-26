@@ -9,7 +9,9 @@
   },
   "scripts": {
     "server": "nodemon server/server.js",
-    "test": "jest"
+    "test": "jest",
+    "seed-db": "node ./server/data/generateData.js",
+    "dev-webpack": "npx webpack"
   },
   "dependencies": {
     "@babel/preset-react": "^7.13.13",
