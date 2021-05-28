@@ -1,5 +1,5 @@
 const React = require('react');
-import {DivTagBody, DivTagPrice, DivTagReviews, SpanTag, ButtonTag, ButtonLabel} from './styledComponents.jsx'
+import {DivTagBody, DivTagPrice, DivTagReviews, SpanTag, ButtonTag, ButtonLabel, ButtonTab} from './styledComponents.jsx'
 
 class Quantity extends React.Component {
   constructor() {
@@ -38,9 +38,8 @@ handleClick() {
     } else {
       return (
 
-        <div>
-        <div>Quantity</div>
-        <button type="button" onClick={this.handleClick}>
+        <ButtonTab>
+        <ul type="button" onClick={this.handleClick}>
           <div>
             <ul>
               <li>
@@ -52,8 +51,8 @@ handleClick() {
               </li>
             </ul>
           </div>
-        </button>
-      </div>
+        </ul>
+      </ButtonTab>
       )
     }
   }
