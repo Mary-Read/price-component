@@ -189,6 +189,9 @@ const DivTagReviews = styled.div`
 	clear: none;
 	z-index: auto;
 
+
+padding-bottom: 16px !important;
+
 	/* List */
 	list-style-image: none;
 	list-style-type: disc;
@@ -277,7 +280,22 @@ const SpanTag = styled.span`
 
 `;
 
-const ButtonTag = styled.button`
+const ButtonLabel = styled.div`
+font-weight: bold;
+transform: translate3d(0px, -12px, 0px);
+font-size: 16px !important;
+
+
+position: absolute;
+background-color: rgb(255, 255, 255);
+padding: 0px 3px;
+backface-visibility: hidden;
+margin-left: 12px;
+z-index: 1;
+pointer-events: none;
+`;
+
+const ButtonTag = styled.div`
 	/* Font & Text */
 	font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -328,6 +346,10 @@ const ButtonTag = styled.button`
 	clear: none;
 	z-index: auto;
 
+	padding-top: 16px !important;
+
+  padding-bottom: 16px !important;
+
 	/* List */
 	list-style-image: none;
 	list-style-type: disc;
@@ -345,12 +367,27 @@ const ButtonTag = styled.button`
 	cursor: pointer;
 	visibility: visible;
 
-`
+	/* Effects */
+	transform: none;
+	transition: all 0s ease 0s;
+	outline-offset: 0px;
+	box-sizing: border-box;
+	resize: none;
+	text-shadow: none;
+	text-overflow: clip;
+	word-wrap: normal;
+	box-shadow: none;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+`;
 
 export {
   DivTagBody,
   DivTagReviews,
   DivTagPrice,
   SpanTag,
-  ButtonTag
+  ButtonTag,
+	ButtonLabel
 }
