@@ -1,10 +1,12 @@
 const React = require('react');
+import {DivTagBody, DivTagPrice, DivTagReviews, SpanTag, ButtonTag, ButtonLabel} from './styledComponents.jsx'
 
 class Quantity extends React.Component {
   constructor() {
     super();
     this.state = {
-      clicked: false
+      clicked: false,
+      stock: '1'
     },
     this.handleClick = this.handleClick.bind(this);
   }
@@ -19,26 +21,23 @@ handleClick() {
     if(!this.state.clicked) {
       return (
         <div>
-          <div>Quantity</div>
-          <button type="button" onClick={this.handleClick}>
+          <div>
             <div>
-              <span>1</span>
+              <ButtonLabel>Quantity</ButtonLabel>
+              <ButtonTag type="button" onClick={this.handleClick}>
+                <div>
+                  <div>
+                  <span>{this.state.stock}</span>
+                  </div>
+                </div>
+              </ButtonTag>
             </div>
-          </button>
+          </div>
         </div>
       )
     } else {
       return (
 
-          //<h4>Quantity</h4>
-      // drop down bar
-        // numbers provided by shiping api
-      // <div>
-      //   <ul>
-      //     <li>1</li>
-      //     <li>2</li>
-      //   </ul>
-      // </div>
         <div>
         <div>Quantity</div>
         <button type="button" onClick={this.handleClick}>
@@ -48,13 +47,6 @@ handleClick() {
                 <a>
                   <div>
                     <div>1</div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <div>
-                    <div>2</div>
                   </div>
                 </a>
               </li>
