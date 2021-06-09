@@ -53,10 +53,10 @@ class App extends React.Component {
             <Quantity />
           </SpanTag>
           {/* <Quanttity /> */}
-          <p>Color Picker Here</p>
-          <Colors />
+          {/* <p>Color Picker Here</p> */}
           {/* <Colors /> */}
-          <p>Size Selector Here</p>
+          {/* <Colors /> */}
+          {/* <p>Size Selector Here</p> */}
       </DivTagBody>
     )
   }
