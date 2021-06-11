@@ -37,7 +37,7 @@
     "@babel/preset-env": "^7.14.2",
     "babel-loader": "^8.2.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
-    "webpack": "^5.37.0",
+    "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   }
 }

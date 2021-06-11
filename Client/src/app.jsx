@@ -21,11 +21,11 @@ class App extends React.Component {
     }
     $.ajax({
       type: 'GET',
-      url: `http://localhost:2000/price/${this.item}`,
+      url: `http://ec2-18-191-151-219.us-east-2.compute.amazonaws.com:2000/price/${this.item}`,
       success: (item) => {
         // $.ajax({
         //   type: 'GET',
-        //   url: `http://localhost:2000/price/${data}`,
+        //   url: `http://ec2-18-191-151-219.us-east-2.compute.amazonaws.com:2000/price/${data}`,
         //   success: (item) => {
             this.setState({
               price: item.price
