@@ -12,7 +12,9 @@ class App extends React.Component {
     super();
     this.state = {
       price: '',
-      item: '1'
+      item: '1',
+      stock: '',
+      store: Math.floor(Math.random() * 99)
     }
 
      this.item = window.location.pathname.slice(window.location.pathname.length -1);
@@ -21,18 +23,23 @@ class App extends React.Component {
     }
     $.ajax({
       type: 'GET',
-      url: `http://localhost:2000/price/${this.item}`,
+      url: `http://ec2-18-191-151-219.us-east-2.compute.amazonaws.com:2000/${this.item}`,
       success: (item) => {
-        // $.ajax({
-        //   type: 'GET',
-        //   url: `http://localhost:2000/price/${data}`,
-        //   success: (item) => {
             this.setState({
               price: item.price
-              //item: item
             });
           }
         })
+
+        $.ajax({
+          type: 'GET',
+          url: `https://ec2-18-116-227-34.us-east-2.compute.amazonaws.com:4000/shipping/${this.state.store}/${this.item}`,
+          success: (item) => {
+                this.setState({
+                  stock: item.stock
+                });
+              }
+            })
 
   }
 
@@ -50,7 +57,7 @@ class App extends React.Component {
           {/* <p>Payment Options Here</p> */}
           {/* <PayOptions /> */}
           <SpanTag>
-            <Quantity />
+            <Quantity stock={this.state.stock}/>
           </SpanTag>
           {/* <Quanttity /> */}
           {/* <p>Color Picker Here</p> */}
