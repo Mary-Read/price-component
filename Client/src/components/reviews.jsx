@@ -4,7 +4,7 @@ class Reviews extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
+
     },
     this.stars = this.stars.bind(this);
   }
@@ -25,7 +25,7 @@ class Reviews extends React.Component {
   render() {
     return (
       <div>
-        {/* temp place holders */}
+        {/* temp place holdes */}
         {/* ⭐️⭐️⭐️⭐️⭐️ */}
         <table>
           <tr>{this.stars()}  {Math.floor(Math.random() * (3215 - 8 + 8) + 8)}</tr>
