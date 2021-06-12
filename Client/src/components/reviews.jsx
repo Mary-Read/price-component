@@ -13,7 +13,7 @@ class Reviews extends React.Component {
     let x = Math.floor(Math.random() * 5)
     for(let i = 0; i < x; i++) {
       return (
-        '⭐'️
+        <tr>'⭐'</tr>️
       )
     }
   }
@@ -23,7 +23,9 @@ class Reviews extends React.Component {
       <div>
         {/* temp place holders */}
         {/* ⭐️⭐️⭐️⭐️⭐️ */}
+        <table>
         {this.stars()}
+        </table>
         <span>233</span>
       </div>
     )
