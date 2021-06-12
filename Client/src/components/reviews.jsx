@@ -13,7 +13,7 @@ class Reviews extends React.Component {
     let x = Math.floor(Math.random() * 5)
     for(let i = 0; i < x; i++) {
       return (
-        ⭐️
+        '⭐'️
       )
     }
   }
