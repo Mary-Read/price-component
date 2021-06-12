@@ -2,11 +2,10 @@ const React = require('react');
 import {DivTagBody, DivTagPrice, DivTagReviews, SpanTag, ButtonTag, ButtonLabel, ButtonTab} from './styledComponents.jsx'
 
 class Quantity extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       clicked: false,
-      stock: '1'
     },
     this.handleClick = this.handleClick.bind(this);
   }
@@ -15,6 +14,8 @@ handleClick() {
   this.setState({clicked: !this.state.clicked});
   console.log(this.state.clicked)
 }
+
+
 
   render() {
 
@@ -27,7 +28,7 @@ handleClick() {
               <ButtonTag type="button" onClick={this.handleClick}>
                 <div>
                   <div>
-                  <span>{this.state.stock}</span>
+                  <span>{this.props.stock}</span>
                   </div>
                 </div>
               </ButtonTag>
