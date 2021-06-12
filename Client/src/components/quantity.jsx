@@ -8,13 +8,30 @@ class Quantity extends React.Component {
       clicked: false,
       stock: '1'
     },
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this),
+    this.stock = this.stock.bind(this)
   }
 
-handleClick() {
-  this.setState({clicked: !this.state.clicked});
-  console.log(this.state.clicked)
-}
+
+  handleClick() {
+    this.setState({clicked: !this.state.clicked});
+    console.log(this.state.clicked)
+  }
+
+  stock() {
+    let stockAmount = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    return (
+      stockAmount.map((stock) => (
+        <li>
+          <a>
+            <div>
+              <div key={Math.floor(Math.random() * (999 - 1 + 1) + 1)}>{stock}</div>
+            </div>
+          </a>
+        </li>
+      ))
+    )
+  }
 
   render() {
 
@@ -42,13 +59,14 @@ handleClick() {
         <ul type="button" onClick={this.handleClick}>
           <div>
             <ul>
-              <li>
-                <a>
-                  <div>
-                    <div>1</div>
-                  </div>
-                </a>
-              </li>
+              {/* <li> */}
+                {/* <a> */}
+                  {this.stock()}
+                  {/* <div> */}
+                    {/* <div>1</div> */}
+                  {/* </div> */}
+                {/* </a> */}
+              {/* </li> */}
             </ul>
           </div>
         </ul>
