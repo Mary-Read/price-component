@@ -11,7 +11,7 @@
     "start": "node server/server.js",
     "server": "nodemon server/server.js",
     "test": "jest",
-    "seed-db": "node ./server/data/generateData.js",
+    "seed-db": "node ./Server/data/generateData.js",
     "dev-webpack": "npx webpack"
   },
   "dependencies": {
