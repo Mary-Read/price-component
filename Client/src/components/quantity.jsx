@@ -59,14 +59,7 @@ class Quantity extends React.Component {
         <ul type="button" onClick={this.handleClick}>
           <div>
             <ul>
-              {/* <li> */}
-                {/* <a> */}
                   {this.stock()}
-                  {/* <div> */}
-                    {/* <div>1</div> */}
-                  {/* </div> */}
-                {/* </a> */}
-              {/* </li> */}
             </ul>
           </div>
         </ul>
